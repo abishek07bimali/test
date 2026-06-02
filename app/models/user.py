@@ -173,7 +173,7 @@ class User(BaseModel):
     def find_all(self, order_by="id"):
         db = Database()
         results = db.fetch_all(
-            f"SELECT * FROM {self.table} WHERE role != 'admin' ORDER BY {order_by}"
+            f"SELECT id,name,role,email FROM {self.table} WHERE role != 'admin' ORDER BY {order_by}"
         )
         db.close()
         return results
