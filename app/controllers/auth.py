@@ -175,7 +175,6 @@ class AuthController(BaseController):
                 update_password = True
             user_obj.update(user_id=id, update_password=update_password)
             return redirect(url_for("auth.dashboard"))
-
         return render_template("editUser.html", user=user_data)
     
 
